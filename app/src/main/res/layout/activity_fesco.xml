@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.FrescoActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gif" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv5"
+                android:layout_width="72dp"
+                android:layout_height="72dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv4"
+                android:layout_width="72dp"
+                android:layout_height="72dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv3"
+                android:layout_width="72dp"
+                android:layout_height="72dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv2"
+                android:layout_width="72dp"
+                android:layout_height="72dp" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv1"
+                android:layout_width="72dp"
+                android:layout_height="72dp" />
+
+        </FrameLayout>
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="15dp"
+            app:placeholderImage="@mipmap/course_recording" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdvx"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="15dp"
+            app:placeholderImage="@drawable/circle_fef4c4" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/sgp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="15dp"
+             />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="webp" />
+
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/webp5"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/webp4"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/webp3"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/webp2"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/webp1"
+            android:layout_width="72dp"
+            android:layout_height="72dp" />
+
+
+    </FrameLayout>
+
+</LinearLayout>

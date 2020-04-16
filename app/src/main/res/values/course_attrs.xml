@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CourseCircleProgressBar">
+        <attr name="course_line_count" format="integer|reference"/>
+        <attr name="course_line_width" format="dimension|reference"/>
+        <attr name="course_progress_start_color" format="color|reference"/>
+        <attr name="course_progress_end_color" format="color|reference"/>
+        <attr name="course_progress_text_color" format="color|reference"/>
+        <attr name="course_progress_text_size" format="dimension|reference"/>
+        <attr name="course_progress_stroke_width" format="dimension|reference"/>
+        <attr name="course_progress_background_color" format="color|reference"/>
+        <attr name="course_progress_start_degree" format="integer|reference"/>
+        <attr name="course_drawBackgroundOutsideProgress" format="boolean|reference"/>
+
+        <attr name="course_style">
+            <enum name="line" value="0"/>
+            <enum name="solid" value="1"/>
+            <enum name="solid_line" value="2"/>
+        </attr>
+
+        <attr name="course_progress_shader">
+            <enum name="linear" value="0"/>
+            <enum name="radial" value="1"/>
+            <enum name="sweep" value="2"/>
+        </attr>
+
+        <attr name="course_progress_stroke_cap">
+            <enum name="butt" value="0"/>
+            <enum name="round" value="1"/>
+            <enum name="square" value="2"/>
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="VoiceWaveView">
+        <attr name="course_lineSpace" format="dimension"/>
+        <attr name="course_lineWidth" format="dimension"/>
+        <attr name="course_duration" format="integer"/>
+
+        <attr name="course_waveMode" format="enum">
+            <enum name="up_down" value="0"/>
+            <enum name="left_right" value="1"/>
+        </attr>
+
+        <attr name="course_lineType" format="enum">
+            <enum name="bar_chart" value="0"/>
+            <enum name="line_graph" value="1"/>
+        </attr>
+
+        <attr name="course_lineColor" format="color"/>
+        <attr name="android:gravity"/>
+    </declare-styleable>
+</resources>

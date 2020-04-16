@@ -1,0 +1,4 @@
+rootProject.name='jrhApplication'
+include ':app'
+include ':lib'
+include ':jrhlibrary'
