@@ -2,3 +2,5 @@ rootProject.name='jrhApplication'
 include ':app'
 include ':lib'
 include ':jrhlibrary'
+
+println "配置开始执行"

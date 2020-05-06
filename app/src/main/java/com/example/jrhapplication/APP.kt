@@ -26,6 +26,13 @@ class APP :Application(){
             .experiment().setNativeCodeDisabled(true)
             .build())
 
+        instance = this
+
 //        Fresco.initialize(this)
+    }
+
+    companion object{
+        lateinit var instance :Application
+
     }
 }

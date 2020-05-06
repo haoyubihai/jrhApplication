@@ -30,7 +30,12 @@
     </LinearLayout>
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp"
-        android:visibility="visible"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

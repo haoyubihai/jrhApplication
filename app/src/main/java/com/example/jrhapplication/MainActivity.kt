@@ -24,5 +24,6 @@ class MainActivity : AppCompatActivity() {
         btnFresco.setOnClickListener { startKtxActivity<FrescoActivity>() }
         btnSpring.setOnClickListener { startKtxActivity<SpringActivity>() }
         btnTrans.setOnClickListener { startKtxActivity<TransformationLayoutActivity>() }
+        btnFastJson.setOnClickListener { startKtxActivity<FastjsonActivity>() }
     }
 }

@@ -77,5 +77,14 @@
           android:textAllCaps="false"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"/>
+
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/btnFastJson"
+          android:textColor="@color/colorAccent"
+          android:text="btnFastJson"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
    </LinearLayout>
 </androidx.core.widget.NestedScrollView>

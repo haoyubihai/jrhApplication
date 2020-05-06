@@ -22,7 +22,56 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets{
+        main{
+            jniLibs.srcDirs = ['libs']
 
+            res.srcDirs = ["src/main/res","src/main/res-ad"]
+        }
+
+    }
+
+}
+
+task helloTask(group: "jrh",description:"test task"){
+
+    println 'hello task'
+
+    doFirst {
+        println("hello 11111")
+    }
+
+    doFirst {}
+}
+
+helloTask.doFirst {
+    println("222222222")
+}
+
+this.tasks.create("hello"){
+    setGroup("jrh")
+    setDescription("test tasks")
+    println 'hello tasksssssssssss'
+}
+
+task TaskA {
+    doLast { println "taskA"}
+}
+
+task TaskY{
+    doLast {println "taskY"}
+}
+
+task TaskX {
+    mustRunAfter TaskA
+    doLast {println "taskX"}
+}
+task TaskZ(dependsOn:[TaskX,TaskY]){
+    doLast {println "taskZ"}
+}
+
+task TaskM{
+    dependsOn TaskZ
 }
 
 dependencies {
@@ -62,7 +111,7 @@ dependencies {
 
     implementation 'com.facebook.rebound:rebound:0.3.8'
 
-
+    implementation 'com.alibaba:fastjson:1.1.71.android'
     implementation "com.github.skydoves:transformationlayout:1.0.3"
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
@@ -70,3 +119,7 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.2'
 
 }
+
+
+//println(this.project.parent.name)
+println("app--"+rootProject.name)
