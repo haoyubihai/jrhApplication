@@ -19,17 +19,17 @@ android {
     }
 
 
-    signingConfigs{
-        release{
+    signingConfigs {
+        release {
 
-            storeFile file("../jrh4.keystore")
+            storeFile file("../jrh5.keystore")
             storePassword "android"
             keyAlias "android"
             keyPassword "android"
         }
 
-        debug{
-            storeFile file("../jrh4.keystore")
+        debug {
+            storeFile file("../jrh5.keystore")
             storePassword "android"
             keyAlias "android"
             keyPassword "android"
@@ -43,18 +43,32 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
-        debug{
+        debug {
 
         }
     }
-    sourceSets{
-        main{
+    sourceSets {
+        main {
             jniLibs.srcDirs = ['libs']
-            res.srcDirs = ["src/main/res","src/main/res-ad"]
+            res.srcDirs = ["src/main/res", "src/main/res-ad"]
         }
 
     }
+
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName = "jrh_v${defaultConfig.versionName}_${releaseTime()}.apk"
+            outputFileName = fileName
+        }
+    }
+
 }
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd_hh-mm-ss", TimeZone.getTimeZone("GMT+08:00"))
+}
+
 walle {
     // 指定渠道包的输出路径
     apkOutputFolder = new File("${project.buildDir}/outputs/channels");
@@ -114,4 +128,4 @@ dependencies {
 
 
 //println(this.project.parent.name)
-println("app--"+rootProject.name)
+println("app--" + rootProject.name)
