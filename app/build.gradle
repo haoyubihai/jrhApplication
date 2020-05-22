@@ -2,13 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'walle'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.example.jrhapplication"
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -16,62 +18,50 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
+    signingConfigs{
+        release{
+
+            storeFile file("../jrh4.keystore")
+            storePassword "android"
+            keyAlias "android"
+            keyPassword "android"
+        }
+
+        debug{
+            storeFile file("../jrh4.keystore")
+            storePassword "android"
+            keyAlias "android"
+            keyPassword "android"
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+
         }
     }
     sourceSets{
         main{
             jniLibs.srcDirs = ['libs']
-
             res.srcDirs = ["src/main/res","src/main/res-ad"]
         }
 
     }
-
 }
-
-task helloTask(group: "jrh",description:"test task"){
-
-    println 'hello task'
-
-    doFirst {
-        println("hello 11111")
-    }
-
-    doFirst {}
-}
-
-helloTask.doFirst {
-    println("222222222")
-}
-
-this.tasks.create("hello"){
-    setGroup("jrh")
-    setDescription("test tasks")
-    println 'hello tasksssssssssss'
-}
-
-task TaskA {
-    doLast { println "taskA"}
-}
-
-task TaskY{
-    doLast {println "taskY"}
-}
-
-task TaskX {
-    mustRunAfter TaskA
-    doLast {println "taskX"}
-}
-task TaskZ(dependsOn:[TaskX,TaskY]){
-    doLast {println "taskZ"}
-}
-
-task TaskM{
-    dependsOn TaskZ
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels");
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk';
+    // 渠道配置文件
+    channelFile = new File("${project.getProjectDir()}/channel")
 }
 
 dependencies {
@@ -117,6 +107,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.2'
+
+    implementation 'com.meituan.android.walle:library:1.1.6'
 
 }
 

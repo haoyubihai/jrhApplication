@@ -1,0 +1,70 @@
+
+task downLoad(group: "jrh") {
+    exec {
+        println("hello download")
+        executable "/Users/jiaruihua/Desktop/downloadjrh.sh"
+    }
+}
+
+task checkDownload(group: "jrh") {
+    dependsOn(downLoad)
+    println("down over")
+    doLast { updateConfigInfo }
+}
+
+task updateConfigInfo(group: "jrh") {
+    def properties = new Properties()
+    def path = project.getRootDir().path
+    def fromFile = new File("$path/config/config.properties")
+    def toFile = new File("$path/config/local.properties")
+    properties.load(new FileInputStream(fromFile))
+    properties.propertyNames()?.each {
+        changeInfo(toFile, it, encode(properties.get(it)))
+    }
+}
+/**
+ * 解决乱码
+ * @param str
+ * @return
+ */
+def encode(String str) {
+//    return new String(str.getBytes("iso8859-1"), "UTF-8")
+    return str
+}
+/**
+ *  修改 changeFile中的 keyName = value
+ * @param changeFile 待修改的文件
+ * @param keyName
+ * @param value
+ * @return
+ */
+def changeInfo(File changeFile, String keyName, String value) {
+    if (!changeFile.exists()) return
+    def list = []
+    changeFile.withReader('UTF-8') { reader ->
+        reader.eachLine {
+            if (it.contains(keyName)) {
+                it = "$keyName=$value"
+            }
+            list.add(it + "\n")
+        }
+    }
+    changeFile.withWriter('UTF-8') { writer ->
+        list.each {
+            writer.write(it)
+        }
+    }
+    println("change--$keyName---over")
+}
+
+/**
+ * 文件上传
+ */
+task uploadFile(group: "jrh") {
+    exec {
+        executable "/Users/jiaruihua/Desktop/uploadjrh.sh"
+    }
+    doLast {
+        println("upload over")
+    }
+}

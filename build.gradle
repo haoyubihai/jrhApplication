@@ -29,6 +29,9 @@ buildscript {
         /* 👇👇👇👇 引用这个模块 👇👇👇👇 用于列出工程中依赖的 AAR* 中使用的所有的动态库。$ ./gradlew listSharedLibraries*/
         classpath "com.didiglobal.booster:booster-task-list-shared-library:$booster_version"
 
+        //打包
+        classpath 'com.meituan.android.walle:plugin:1.1.6'
+
     }
 }
 
@@ -51,45 +54,45 @@ task clean(type: Delete) {
 }
 
 
-def getProjects(){
-    this.project.allprojects.eachWithIndex{ Project project, int index ->
-//        println(project.name+"----${index}")
-    }
-}
-
-getProjects()
-
-def getChildProjects(){
-    this.project.subprojects {
-//        p-> println("sub----${p.name}")
-    }
-}
-
-
-println("root--path = ${getRootDir().absolutePath}")
-println("build--path = ${getBuildDir().absolutePath}")
-println("project--path = ${getProjectDir().absolutePath}")
-
-
-getChildProjects()
-
-this.beforeEvaluate {
-//    println "开始配置之前"
-}
-this.afterEvaluate {
-//    println "开始配置之后"
-}
-
-this.gradle.buildFinished {
-//    println "build执行完"
-}
-
-this.gradle.beforeProject {
-//    println "project beforeProject"
-}
-this.gradle.afterProject {
-//    println "project afterProject"
-}
+//def getProjects(){
+//    this.project.allprojects.eachWithIndex{ Project project, int index ->
+////        println(project.name+"----${index}")
+//    }
+//}
+//
+//getProjects()
+//
+//def getChildProjects(){
+//    this.project.subprojects {
+////        p-> println("sub----${p.name}")
+//    }
+//}
+//
+//
+//println("root--path = ${getRootDir().absolutePath}")
+//println("build--path = ${getBuildDir().absolutePath}")
+//println("project--path = ${getProjectDir().absolutePath}")
+//
+//
+//getChildProjects()
+//
+//this.beforeEvaluate {
+////    println "开始配置之前"
+//}
+//this.afterEvaluate {
+////    println "开始配置之后"
+//}
+//
+//this.gradle.buildFinished {
+////    println "build执行完"
+//}
+//
+//this.gradle.beforeProject {
+////    println "project beforeProject"
+//}
+//this.gradle.afterProject {
+////    println "project afterProject"
+//}
 
 
 //project("app"){  project->
