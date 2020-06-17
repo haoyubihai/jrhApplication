@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.FastjsonActivity"></activity>
+        <activity android:name=".ui.MotionActivity"></activity>
+        <activity android:name=".ui.FastjsonActivity" />
         <activity android:name=".ui.transform.PosterDetailActivity" />
         <activity android:name=".ui.transform.TransformationLayoutActivity" />
         <activity android:name=".ui.SpringActivity" />

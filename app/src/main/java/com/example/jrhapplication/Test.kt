@@ -9,3 +9,34 @@ package com.example.jrhapplication
  * 用途:
  ***************************************
  */
+
+open class Person(id:Int){
+
+    constructor(id: Int,name:String):this(id){
+        println("person---id=$id---name=$name")
+    }
+}
+class Boy:Person{
+
+    constructor(id: Int):super(id){
+
+    }
+    constructor(id: Int,name:String):super(id,name){
+
+        println("boy---id=$id---name=$name")
+
+    }
+
+
+}
+class Test{
+    companion object{
+        fun main() {
+            println(Boy(20,"jack"))
+        }
+    }
+
+}
+
+
+
