@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import com.alibaba.fastjson.JSON
 import com.example.jrhapplication.R
-import groovy.json.JsonOutput
 
 class FastjsonActivity : AppCompatActivity() {
 
@@ -30,7 +29,7 @@ class FastjsonActivity : AppCompatActivity() {
 //            Log.e("FastJson USER=",it.toString())
 //        }
 
-        Log.e("JSON----", JsonOutput.prettyPrint(str))
+//        Log.e("JSON----", JsonOutput.prettyPrint(str))
 
     }
 }

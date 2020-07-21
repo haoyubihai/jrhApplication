@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         btnTrans.setOnClickListener { startKtxActivity<TransformationLayoutActivity>() }
         btnFastJson.setOnClickListener { startKtxActivity<FastjsonActivity>() }
         btnMotion.setOnClickListener { startKtxActivity<MotionActivity>() }
+        btnTimer.setOnClickListener { startKtxActivity<TimerActivity>() }
 
     }
 
