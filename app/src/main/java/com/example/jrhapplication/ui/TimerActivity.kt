@@ -2,6 +2,7 @@ package com.example.jrhapplication.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.jrhapplication.R
 import com.example.jrhapplication.viewmodel.TimerVMImpl
@@ -35,5 +36,14 @@ class TimerActivity : AppCompatActivity() {
             })
         }
         btn3.setOnClickListener { timer.stopAllTimer() }
+
+        btn4.setOnClickListener { Toast.makeText(this,"hello btn4",Toast.LENGTH_SHORT).show() }
+        btn5.setOnClickListener { btn4.isClickable = true }
+        btn6.setOnClickListener { btn4.isClickable = false }
+
+        btn7.setOnClickListener { timer.timeDown(3){
+            println("$it s over")
+        } }
+
     }
 }

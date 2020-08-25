@@ -3,6 +3,7 @@ package com.example.jrhapplication
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
+import com.example.jrhapplication.flowtest.FlowActivity
 import com.example.jrhapplication.ktx.startKtxActivity
 import com.example.jrhapplication.ui.*
 import com.example.jrhapplication.ui.transform.TransformationLayoutActivity
@@ -12,6 +13,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     val aa = MutableLiveData<String>()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         btnFastJson.setOnClickListener { startKtxActivity<FastjsonActivity>() }
         btnMotion.setOnClickListener { startKtxActivity<MotionActivity>() }
         btnTimer.setOnClickListener { startKtxActivity<TimerActivity>() }
+        btnLiveData.setOnClickListener { startKtxActivity<MainLiveDataActivity>() }
+        btnKTX.setOnClickListener { startKtxActivity<KtxActivity>() }
+        btnFlow.setOnClickListener { startKtxActivity<FlowActivity>() }
+        btnSkill.setOnClickListener { startKtxActivity<SkillsMainActivity>() }
 
     }
 

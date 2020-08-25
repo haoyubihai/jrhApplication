@@ -17,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.TimerActivity"></activity>
+        <activity android:name=".ui.SkillsMainActivity"></activity>
+        <activity android:name=".flowtest.FlowActivity" />
+        <activity android:name=".ui.KtxActivity" />
+        <activity android:name=".ui.MainLiveDataActivity" />
+        <activity android:name=".ui.CoroutineActivity" />
+        <activity android:name=".ui.TimerActivity" />
         <activity android:name=".ui.MotionActivity" />
         <activity android:name=".ui.FastjsonActivity" />
         <activity android:name=".ui.transform.PosterDetailActivity" />

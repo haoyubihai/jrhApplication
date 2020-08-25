@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".flowtest.FlowActivity">
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <Button
+        android:layout_marginTop="@dimen/dp_30"
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="SubmitDifferentValue"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <Button
+        android:layout_marginTop="@dimen/dp_30"
+        android:id="@+id/submitSame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SubmitSameValue"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+
+    <Button
+        android:layout_marginTop="@dimen/dp_30"
+        android:id="@+id/submitObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submitObject"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="205dp" />
+</LinearLayout>

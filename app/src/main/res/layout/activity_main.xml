@@ -9,8 +9,42 @@
        android:layout_width="match_parent"
        android:orientation="vertical"
        android:padding="10dp"
+       android:id="@+id/container"
        android:layout_height="match_parent"
        tools:context=".MainActivity">
+
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/btnSkill"
+          android:textColor="@color/colorAccent"
+          android:text="Skill"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/btnFlow"
+          android:textColor="@color/colorAccent"
+          android:text="flow"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/btnKTX"
+          android:textColor="@color/colorAccent"
+          android:text="btnLiveKTX"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/btnLiveData"
+          android:textColor="@color/colorAccent"
+          android:text="btnLiveData"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
       <com.google.android.material.button.MaterialButton
           android:layout_marginTop="10dp"
           android:id="@+id/btnTimer"

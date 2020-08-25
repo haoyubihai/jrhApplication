@@ -1,12 +1,14 @@
 package com.example.jrhapplication.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.ObsoleteCoroutinesApi
+import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.ReceiveChannel
 import kotlinx.coroutines.channels.receiveOrNull
 import kotlinx.coroutines.channels.ticker
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.onEach
 import kotlin.math.roundToInt
 
 /**
@@ -15,7 +17,9 @@ import kotlin.math.roundToInt
  * @Author jiaruihua
  * 邮箱：jiaruihua@ksjgs.com
  * 创建时间: 2020/7/20     5:54 PM
- * 用途: 多个计时器处理
+ * 用途:
+ * 1:多个计时器处理
+ * 2:
  * 风险:现在使用的api 被标记为    @ExperimentalCoroutinesApi
  ***************************************
  */
@@ -80,5 +84,22 @@ class TimerVMImpl : TimerViewModel() {
         timerMap.keys.asIterable().asSequence().forEach { key -> stopTimer(key) }
         timerMap.clear()
     }
+
+    private var timeJob: Job?=null
+
+    /** 倒计时*/
+    fun timeDown(seconds: Int, action: () -> Unit) {
+        timeJob?.cancel()
+            timeJob = viewModelScope.launch {
+                (1..seconds).asFlow().onEach { delay(1000) }.collect { time ->
+                    if (time == seconds) {
+                        action()
+                    }
+                }
+            }
+        }
+
+    /** 取消倒计时*/
+    fun cancelTimer() = timeJob?.cancel()
 }
 

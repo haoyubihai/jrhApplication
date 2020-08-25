@@ -7,50 +7,70 @@
     android:orientation="vertical"
     tools:context=".ui.ShadowActivity">
 
-    <TextView
-        android:id="@+id/s1"
-        android:background="#ffaa9f"
-        android:padding="@dimen/dp_10"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="@dimen/dp_10"
-        android:gravity="center"
-        android:backgroundTint="#ff0000"
-        android:orientation="vertical"
-        android:text="1111" />
+    <com.wiser.library.shadow.ShadowContainer
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:container_round_corner="container_corner_all"
+        app:container_shadowColor="#33FF3500"
+        app:container_shadowRadius="5dp"
+        app:container_shadowRoundRadius="17dp"
+        app:container_shadowShape="container_round_rectangle">
+
+
+        <TextView
+            android:id="@+id/s1"
+
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round_17"
+            android:gravity="center"
+            android:text="1111" />
+
+    </com.wiser.library.shadow.ShadowContainer>
 
     <TextView
-        android:background="#ff909f"
-        android:padding="@dimen/dp_10"
         android:id="@+id/s2"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="@dimen/dp_10"
+        android:background="#ff909f"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="@dimen/dp_10"
         android:text="2222" />
 
     <TextView
-        android:background="#099998"
-        android:padding="@dimen/dp_10"
         android:id="@+id/s3"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="@dimen/dp_10"
+        android:background="#099998"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="@dimen/dp_10"
         android:text="setOval" />
 
     <TextView
-        android:background="#099998"
-        android:padding="@dimen/dp_10"
         android:id="@+id/s4"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="@dimen/dp_10"
+        android:background="#099998"
         android:gravity="center"
         android:orientation="vertical"
+        android:padding="@dimen/dp_10"
         android:text="setPath" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_margin="@dimen/dp_30"
+        android:elevation="@dimen/sp_14" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="100dp"
+        android:layout_margin="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"/>
 
 
 </LinearLayout>
