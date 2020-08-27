@@ -10,9 +10,8 @@ import kotlin.reflect.KProperty
  * @Author jiaruihua
  * 邮箱：jiaruihua@ksjgs.com
  * 创建时间: 2020/8/26     11:06 AM
- * 用途:
- * 场景1：为线下作业标题 追加当前状态
- * 场景2：当线下作业说明为空时，添加默认提示语
+ * 用途:属性代理测试类
+ *
  ***************************************
  */
 
@@ -20,9 +19,8 @@ fun main() {
 
     val homework = OfflineHomework()
     homework.title = "线下作业"
+    println(homework.title)
 
-
-    val address:String by lazy { "a" }
     /**
      * 代理 当name值改变时，进行回调监听
      */
@@ -47,7 +45,7 @@ fun main() {
     age = 30
     println("age------$age")
 
-//    println(homework.title)
+
 
     val map = mutableMapOf<String,Any?>("title" to "android","price" to 30.0)
     Course(map).run {
@@ -58,7 +56,7 @@ fun main() {
 
 class HomeworkDelegate :ReadWriteProperty<OfflineHomework,String>{
 
-    var mValue: String? = null
+    var mValue: String? = nullgit
     val mState = "未批改"
 
     override fun setValue(thisRef: OfflineHomework, property: KProperty<*>, value: String) {
