@@ -56,7 +56,7 @@ fun main() {
 
 class HomeworkDelegate :ReadWriteProperty<OfflineHomework,String>{
 
-    var mValue: String? = nullgit
+    var mValue: String? = null
     val mState = "未批改"
 
     override fun setValue(thisRef: OfflineHomework, property: KProperty<*>, value: String) {
