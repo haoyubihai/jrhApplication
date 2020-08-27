@@ -71,6 +71,7 @@ fun <T> Bundle.put(key: String, value: T) {
         is CharArray -> putCharArray(key, value)
         is CharSequence -> putCharSequence(key, value)
         is Float -> putFloat(key, value)
+        is Bundle -> putBundle(key, value)
         is Parcelable -> putParcelable(key, value)
         is Serializable -> putSerializable(key, value)
         else -> throw IllegalStateException("Type of property $key is not supported")
@@ -85,7 +86,7 @@ class FragmentBundleDataDelegate<T : Any> : ReadWriteProperty<Fragment, T> {
      * @return the property value.
      */
     override fun getValue(thisRef: Fragment, property: KProperty<*>): T {
-        return thisRef.arguments?.get(property.name) as T
+        return thisRef.arguments?.get(property.name) as? T ?:  throw IllegalStateException("Property ${property.name} could not be read")
     }
 
     /**
@@ -99,5 +100,7 @@ class FragmentBundleDataDelegate<T : Any> : ReadWriteProperty<Fragment, T> {
         args.put(property.name, value)
     }
 }
+
+
 
 fun <T : Any> argument(): ReadWriteProperty<Fragment, T> = FragmentBundleDataDelegate()

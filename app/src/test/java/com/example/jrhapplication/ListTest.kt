@@ -201,8 +201,19 @@ class ListTest {
 
     val userFilterNot = userList.filterNot {it.age%2==0  }
 
+    /**
+     *  userList 前10个
+     */
     val userTake = userList.take(10)
+
+    /**
+     * userList 最后10个
+     */
     val userTakeLast = userList.takeLast(10)
+
+    /**
+     * userList --> 11-20的元素
+     */
     val userSubList = userList.subList(11,20)
 
     /**
