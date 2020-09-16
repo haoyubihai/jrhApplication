@@ -17,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.SkillsMainActivity"></activity>
+        <activity android:name=".ui.MotionMainActivity"></activity>
+        <activity
+            android:name=".ui.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.SkillsMainActivity" />
         <activity android:name=".flowtest.FlowActivity" />
         <activity android:name=".ui.KtxActivity" />
         <activity android:name=".ui.MainLiveDataActivity" />

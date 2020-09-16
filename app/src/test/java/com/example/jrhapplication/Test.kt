@@ -11,14 +11,7 @@ package com.example.jrhapplication
  */
 
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
-import kotlin.Exception
-import kotlin.system.measureTimeMillis
+import kotlinx.coroutines.runBlocking
 
 //fun main() = runBlocking {
 //    val startTime = System.currentTimeMillis()
@@ -188,12 +181,20 @@ class User(val name: String)
 
 
 fun main() = runBlocking<Unit> {
-    val nums = (1..5).asFlow()// numbers 1..3 every 300 ms
-    val strs = (2.. 4).asFlow()// strings every 400 ms
-    nums.zip(strs) { a, b -> "$a -> $b" } // compose a single string with "zip"
-        .collect { value -> // collect and print
-            println("$value  ms from start")
-        }
+//    val nums = (1..5).asFlow()// numbers 1..3 every 300 ms
+//    val strs = (2.. 4).asFlow()// strings every 400 ms
+//    nums.zip(strs) { a, b -> "$a -> $b" } // compose a single string with "zip"
+//        .collect { value -> // collect and print
+//            println("$value  ms from start")
+//        }
+
+    val a = 1
+    val b = 2
+
+
+    val c = a or 1
+    val cc = a and  1
+    val ss =  a xor 2
 }
 
 //fun main() = runBlocking<Unit> {

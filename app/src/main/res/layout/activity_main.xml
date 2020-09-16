@@ -15,6 +15,22 @@
 
       <com.google.android.material.button.MaterialButton
           android:layout_marginTop="10dp"
+          android:id="@+id/btnMotionLay"
+          android:textColor="@color/colorAccent"
+          android:text="motion"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/btnScroll"
+          android:textColor="@color/colorAccent"
+          android:text="scrolltotop"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
           android:id="@+id/btnSkill"
           android:textColor="@color/colorAccent"
           android:text="Skill"

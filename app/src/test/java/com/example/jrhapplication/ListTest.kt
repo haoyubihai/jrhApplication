@@ -19,9 +19,21 @@ fun main() {
 
     val listTest = ListTest()
 
-    listTest.userList.forEach {
-        println("--------------${it}")
+    listTest.userList.forEach {}
+    listTest.userList.onEach {  }
+    listTest.userList.map {  }
+    listTest.userList.mapIndexed { index: Int, user: User ->  }
+
+    for (i in listTest.userList.indices){
+
     }
+
+    for (i in 0 ..listTest.userList.lastIndex){
+
+    }
+
+
+
 
 }
 
