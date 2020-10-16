@@ -187,14 +187,14 @@ fun main() = runBlocking<Unit> {
 //        .collect { value -> // collect and print
 //            println("$value  ms from start")
 //        }
+//
+//    val a = null
+//    val ss =  a ?: 2
 
-    val a = 1
-    val b = 2
+    val list = mutableListOf<String>("a","b","c")
+    list[0] = "d"
+    println(list)
 
-
-    val c = a or 1
-    val cc = a and  1
-    val ss =  a xor 2
 }
 
 //fun main() = runBlocking<Unit> {

@@ -32,6 +32,11 @@ fun main() {
 
     }
 
+    var isLogin = false
+
+    val userList =  if (isLogin) mutableListOf("abc","cbd","ccc") else emptyList()
+    val nuserList = listOfNotNull("abc","cbd","ccc")
+
 
 
 

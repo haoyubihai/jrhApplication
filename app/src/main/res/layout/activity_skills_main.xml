@@ -15,6 +15,10 @@
         android:text="TextView"
         tools:layout_editor_absoluteX="83dp"
         tools:layout_editor_absoluteY="102dp" />
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btn"

@@ -3,6 +3,8 @@ package com.example.jrhapplication.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
+import androidx.core.widget.doOnTextChanged
 import com.example.jrhapplication.R
 import com.example.jrhapplication.viewmodel.SkillViewModel
 import kotlinx.android.synthetic.main.activity_motion.*
@@ -31,6 +33,11 @@ class SkillsMainActivity : AppCompatActivity() {
         btn2.setOnClickListener { textView.text = skillViewModel.testFirstNullUser()?.address?:"empty" }
 
         testParseToInt()
+
+        edittext.doOnTextChanged { text, start, before, count ->  }
+        
+
+
 
 
     }
