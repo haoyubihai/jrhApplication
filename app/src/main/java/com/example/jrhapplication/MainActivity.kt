@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         btnSkill.setOnClickListener { startKtxActivity<SkillsMainActivity>() }
         btnScroll.setOnClickListener { startKtxActivity<ScrollingActivity>() }
         btnMotionLay.setOnClickListener { startKtxActivity<MotionMainActivity>() }
+        btnRxLay.setOnClickListener { startKtxActivity<RxActivity>() }
 
     }
 

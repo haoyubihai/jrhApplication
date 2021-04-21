@@ -7,6 +7,8 @@ apply plugin: 'walle'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
 
     defaultConfig {
         applicationId "com.example.jrhapplication"
@@ -14,7 +16,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -93,6 +95,7 @@ dependencies {
     implementation "com.google.android.material:material:$material_version"
     implementation project(path: ':lib')
     implementation project(path: ':jrhlibrary')
+    api project(path: ':live-lib-rx')
 //    implementation "com.facebook.fresco:fresco:2.1.0"
 
 
@@ -120,13 +123,14 @@ dependencies {
     implementation "com.github.skydoves:transformationlayout:1.0.3"
 
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.2'
 
     implementation 'com.meituan.android.walle:library:1.1.6'
 
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-
+    implementation "androidx.multidex:multidex:2.0.1"
 }
 
 

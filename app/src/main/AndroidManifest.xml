@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ImageLoderMainActivity"></activity>
+        <activity android:name=".ui.RxActivity"></activity>
+        <activity android:name=".ui.ImageLoderMainActivity" />
         <activity android:name=".ui.MotionMainActivity" />
         <activity
             android:name=".ui.ScrollingActivity"
