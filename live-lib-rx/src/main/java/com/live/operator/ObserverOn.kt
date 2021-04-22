@@ -15,7 +15,7 @@ class ObserverOn<T>(private val source: ObservableSource<T>, private val schedul
         BasicFuseableObserver<T, T>(downStream),Runnable{
 
 
-         val  datas = LinkedBlockingDeque<T>()
+        private val  datas = LinkedBlockingDeque<T>()
 
         override fun onSubscribe() {
         }

@@ -4,9 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.jrhapplication.R
 import com.live.functions.Function
-import com.live.operator.MainThreadScheduler
-import com.live.operator.NewThreadScheduler
-import com.live.operator.RxThreadFactory
+import com.live.operator.*
 import com.live.rx.*
 import kotlinx.android.synthetic.main.activity_rx.*
 
@@ -32,9 +30,8 @@ fun testNewThreadMap() {
             return "$t----map--------"
         }
 
-    })
-        .subscribeOn(NewThreadScheduler(RxThreadFactory()))
-        .observerOn(MainThreadScheduler())
+    }).subscribeOn(Scheduler.NEW_THREAD)
+        .observerOn(Scheduler.MAIN_THREAD)
         .subscribe(object : Observer<String> {
             override fun onSubscribe() {
 
