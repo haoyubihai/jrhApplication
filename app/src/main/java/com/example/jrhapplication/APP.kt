@@ -1,10 +1,20 @@
 package com.example.jrhapplication
 
+import android.app.Activity
 import android.app.Application
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import androidx.core.content.ContextCompat
+import com.example.jrhapplication.ui.ChipsActivity
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.facebook.imagepipeline.core.ImageTranscoderType
 import com.facebook.imagepipeline.core.MemoryChunkType
+import com.jrhlive.library.dp2px
+import com.zj.easyfloat.EasyFloat
 
 /**
  ***************************************
@@ -28,7 +38,82 @@ class APP :Application(){
 
         instance = this
 
+        registerLifecycle()
+
 //        Fresco.initialize(this)
+    }
+
+
+
+    private fun initListener(it: View?) {
+        TODO("Not yet implemented")
+    }
+
+    private fun initLayoutParams(): FrameLayout.LayoutParams {
+        return FrameLayout.LayoutParams(dp2px(100),dp2px(100))
+    }
+
+    private fun registerLifecycle() {
+        instance.registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks{
+            /**
+             * Called when the Activity calls [super.onCreate()][Activity.onCreate].
+             */
+            override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
+
+            }
+
+            /**
+             * Called when the Activity calls [super.onStart()][Activity.onStart].
+             */
+            override fun onActivityStarted(activity: Activity) {
+               checkAndAddFloatView(activity)
+            }
+
+            /**
+             * Called when the Activity calls [super.onResume()][Activity.onResume].
+             */
+            override fun onActivityResumed(activity: Activity) {
+            }
+
+            /**
+             * Called when the Activity calls [super.onPause()][Activity.onPause].
+             */
+            override fun onActivityPaused(activity: Activity) {
+            }
+
+            /**
+             * Called when the Activity calls [super.onStop()][Activity.onStop].
+             */
+            override fun onActivityStopped(activity: Activity) {
+            }
+
+            /**
+             * Called when the Activity calls
+             * [super.onSaveInstanceState()][Activity.onSaveInstanceState].
+             */
+            override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
+            }
+
+            /**
+             * Called when the Activity calls [super.onDestroy()][Activity.onDestroy].
+             */
+            override fun onActivityDestroyed(activity: Activity) {
+            }
+
+        })
+    }
+
+    private fun checkAndAddFloatView(activity: Activity) {
+
+        val root = activity.window.decorView as FrameLayout
+        val floatView = root.findViewById<ViewGroup>(R.id.floatV)
+        if (floatView==null){
+            //没有添加过
+            val v = LayoutInflater.from(activity).inflate(R.layout.lay_float,null,false)
+            val params = FrameLayout.LayoutParams(dp2px(100),dp2px(100))
+            root.addView(v,params)
+        }
+
     }
 
     companion object{

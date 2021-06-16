@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_material_shape_drawable.*
 import kotlinx.android.synthetic.main.activity_timer.*
 import java.util.*
 
-class TimerActivity : AppCompatActivity() {
+class TimerActivity : BaseActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -15,7 +15,7 @@ import com.google.android.material.shape.MaterialShapeDrawable.SHADOW_COMPAT_MOD
 import kotlinx.android.synthetic.main.activity_material_shape_drawable.*
 import java.util.*
 
-class MaterialShapeDrawableActivity : AppCompatActivity() {
+class MaterialShapeDrawableActivity : BaseActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("RestrictedApi")

@@ -14,7 +14,7 @@ import com.example.jrhapplication.ktx.dp2px
 import com.jrhlive.library.dp2px
 import kotlinx.android.synthetic.main.activity_ktx.*
 
-class KtxActivity : AppCompatActivity() {
+class KtxActivity : BaseActivity() {
 
     val fontSize = dp2px(11)
     override fun onCreate(savedInstanceState: Bundle?) {

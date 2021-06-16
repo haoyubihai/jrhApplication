@@ -6,7 +6,7 @@ import android.util.Log
 import com.alibaba.fastjson.JSON
 import com.example.jrhapplication.R
 
-class FastjsonActivity : AppCompatActivity() {
+class FastjsonActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

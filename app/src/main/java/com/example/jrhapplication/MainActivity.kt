@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         btnMotionLay.setOnClickListener { startKtxActivity<MotionMainActivity>() }
         btnRxLay.setOnClickListener { startKtxActivity<RxActivity>() }
 
+
     }
 
 }

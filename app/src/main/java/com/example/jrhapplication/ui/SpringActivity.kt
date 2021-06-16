@@ -8,7 +8,7 @@ import com.facebook.rebound.*
 import com.jrhlive.library.dp2px
 import kotlinx.android.synthetic.main.activity_spring.*
 
-class SpringActivity : AppCompatActivity() {
+class SpringActivity : BaseActivity() {
 
     var bouncinessValue = 30.0
     var speed = 10.0

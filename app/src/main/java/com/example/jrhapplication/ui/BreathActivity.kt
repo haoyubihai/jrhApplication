@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.jrhapplication.R
 import kotlinx.android.synthetic.main.activity_brithe.*
 
-class BreathActivity : AppCompatActivity() {
+class BreathActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

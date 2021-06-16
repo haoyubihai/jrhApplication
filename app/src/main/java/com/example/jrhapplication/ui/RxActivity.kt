@@ -8,7 +8,7 @@ import com.live.operator.*
 import com.live.rx.*
 import kotlinx.android.synthetic.main.activity_rx.*
 
-class RxActivity : AppCompatActivity() {
+class RxActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rx)

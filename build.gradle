@@ -12,7 +12,7 @@ buildscript {
         jcenter()
         mavenLocal()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
+//        maven { url 'https://jitpack.io' }
         maven { url 'https://oss.sonatype.org/content/repositories/public/' }
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
@@ -32,6 +32,8 @@ buildscript {
         //打包
         classpath 'com.meituan.android.walle:plugin:1.1.6'
 
+//        classpath "io.github.haoyubihai:live-try-catch-plugin:0.0.2"
+
     }
 }
 
@@ -40,8 +42,9 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
-        
+//        maven { url 'https://jitpack.io' }
+        maven { url 'https://oss.sonatype.org/content/repositories/public/' }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
     }
 }
 

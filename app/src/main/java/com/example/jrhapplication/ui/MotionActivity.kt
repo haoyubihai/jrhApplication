@@ -23,7 +23,6 @@ class MotionActivity : AppCompatActivity() {
             maskView.startAni()
         }
 
-
         moveProgress.post {
 
             moveProgress.initViews(dp2px(15).toFloat(), Color.RED,Color.BLUE)

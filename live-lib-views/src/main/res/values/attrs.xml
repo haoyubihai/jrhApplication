@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorfulProgressbar">
+        <attr name="style" format="string|reference"/>
+        <attr name="animation" format="boolean"/>
+        <attr name="max" format="integer|reference"/>
+        <attr name="progressValue" format="integer|reference"/>
+        <attr name="secondProgress" format="integer|reference"/>
+        <attr name="backgroundColor" format="color|reference"/>
+        <attr name="progressColor1" format="color|reference"/>
+        <attr name="progressColor2" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundLinearLayout">
+        <attr name="rlRadius" format="dimension" />
+        <attr name="rlClipBackground" format="boolean" />
+    </declare-styleable>
+
+</resources>

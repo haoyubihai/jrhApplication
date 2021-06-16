@@ -20,7 +20,7 @@ import com.facebook.imagepipeline.request.ImageRequestBuilder
 import kotlinx.android.synthetic.main.activity_fesco.*
 import pl.droidsonroids.gif.GifDrawable
 
-class FrescoActivity : AppCompatActivity() {
+class FrescoActivity : BaseActivity() {
 
 
     val gifs = mutableListOf("11", "22", "33", "44", "55")

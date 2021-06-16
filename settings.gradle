@@ -5,3 +5,4 @@ include ':jrhlibrary'
 
 println "配置开始执行"
 include ':live-lib-rx'
+include ':live-lib-views'

@@ -12,7 +12,7 @@ import com.example.jrhapplication.R
 import com.jrhlive.library.dp2px
 import kotlinx.android.synthetic.main.activity_shadow.*
 
-class ShadowActivity : AppCompatActivity() {
+class ShadowActivity : BaseActivity() {
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {

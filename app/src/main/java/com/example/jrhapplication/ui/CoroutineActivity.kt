@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.Continuation
 import kotlin.coroutines.CoroutineContext
 
-class CoroutineActivity : AppCompatActivity() {
+class CoroutineActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine)

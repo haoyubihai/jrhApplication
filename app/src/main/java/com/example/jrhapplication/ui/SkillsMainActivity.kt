@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_motion.*
 import kotlinx.android.synthetic.main.activity_skills_main.*
 import kotlin.properties.Delegates
 
-class SkillsMainActivity : AppCompatActivity() {
+class SkillsMainActivity : BaseActivity() {
 
     private val skillViewModel by lazy { SkillViewModel() }
 

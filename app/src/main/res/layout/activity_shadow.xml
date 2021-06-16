@@ -7,26 +7,7 @@
     android:orientation="vertical"
     tools:context=".ui.ShadowActivity">
 
-    <com.wiser.library.shadow.ShadowContainer
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:container_round_corner="container_corner_all"
-        app:container_shadowColor="#33FF3500"
-        app:container_shadowRadius="5dp"
-        app:container_shadowRoundRadius="17dp"
-        app:container_shadowShape="container_round_rectangle">
 
-
-        <TextView
-            android:id="@+id/s1"
-
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:background="@drawable/round_17"
-            android:gravity="center"
-            android:text="1111" />
-
-    </com.wiser.library.shadow.ShadowContainer>
 
     <TextView
         android:id="@+id/s2"
