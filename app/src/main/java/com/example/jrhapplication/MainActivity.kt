@@ -1,6 +1,7 @@
 package com.example.jrhapplication
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.example.jrhapplication.flowtest.FlowActivity
@@ -40,6 +41,26 @@ class MainActivity : AppCompatActivity() {
         btnMessageBarrier.setOnClickListener { startKtxActivity<MessageBarrierActivity>() }
 
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("onResume-----------")
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        println("onAttachedToWindow-----------")
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        println("onWindowFocusChanged------hasFocus=$hasFocus---")
+    }
+
+    override fun onWindowAttributesChanged(params: WindowManager.LayoutParams?) {
+        super.onWindowAttributesChanged(params)
+        println("onWindowAttributesChanged---params=$params--------")
     }
 
 }
