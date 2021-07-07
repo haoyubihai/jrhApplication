@@ -29,4 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="288dp"/>
 
+    <ImageView
+        android:src="@mipmap/course_follow_sing_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </carbon.widget.LinearLayout>
