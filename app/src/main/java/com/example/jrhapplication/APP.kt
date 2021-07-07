@@ -7,14 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.core.content.ContextCompat
-import com.example.jrhapplication.ui.ChipsActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.ProcessLifecycleOwner
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.facebook.imagepipeline.core.ImageTranscoderType
 import com.facebook.imagepipeline.core.MemoryChunkType
 import com.jrhlive.library.dp2px
-import com.zj.easyfloat.EasyFloat
 
 /**
  ***************************************
@@ -39,6 +40,13 @@ class APP :Application(){
         instance = this
 
         registerLifecycle()
+
+        /**
+         * 新增一种检测 app 前后台的方法 ，这种方法其实内部也是通过注册一个全局的监测activity生命周期的回调，
+         * 并通过计数，前台++ 后台--来判断，与我们通常注册监听的方式没啥差别
+         * 还需要单独引入 lifecycle process 使用
+         */
+        ProcessLifecycleOwner.get().lifecycle.addObserver(ApplicationLifecycleObserver())
 
 //        Fresco.initialize(this)
     }
@@ -121,3 +129,19 @@ class APP :Application(){
 
     }
 }
+
+
+internal class ApplicationLifecycleObserver:LifecycleObserver {
+
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    fun onForeground(){
+        println("-------onForeground")
+    }
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    fun onBackground(){
+        println("-------onBackground")
+
+    }
+}
+

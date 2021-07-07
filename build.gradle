@@ -32,7 +32,7 @@ buildscript {
         //打包
         classpath 'com.meituan.android.walle:plugin:1.1.6'
 
-//        classpath "io.github.haoyubihai:live-try-catch-plugin:0.0.2"
+        classpath "io.github.haoyubihai:live-trace-plugin:0.1.0"
 
     }
 }

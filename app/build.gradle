@@ -3,6 +3,22 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'walle'
+//
+//apply plugin: 'live.trace.plugin'
+//
+//
+//traceExt {
+//    //配置多包名 用","分割
+//    packagePrefixs = "com.example.jrhapplication,"
+//    //配置类名，不配或者配置 "*" 表示所有类
+//    simpleClassNames = "MessageBarrierActivity"
+//    //处理类型 "dir" "jar" "all" 是否区分jar包的class文件
+//    dealType = "dir"
+//
+//}
+//
+
+
 
 android {
     compileSdkVersion 29
@@ -133,6 +149,8 @@ dependencies {
     implementation "androidx.multidex:multidex:2.0.1"
 
     implementation 'io.github.shenzhen2017:easyfloat:1.0.1'
+
+    implementation "androidx.lifecycle:lifecycle-process:2.3.1"
 }
 
 
