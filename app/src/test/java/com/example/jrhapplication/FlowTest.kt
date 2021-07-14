@@ -5,6 +5,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.channels.sendBlocking
 import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.internal.ChannelFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.lang.Exception
@@ -21,8 +22,14 @@ import java.lang.Exception
 
 
 fun main() {
-  testSingle()
-    toList()
+//  testSingle()
+//    toList()
+
+//    testEmitSameValue()
+    testFlow()
+    testMutableStateFlow()
+    testChannelFlowSendSameValue()
+
 }
 
 val dataList = 0..10
@@ -84,4 +91,60 @@ fun toList() = runBlocking {
     }.toList()
 
     println(listOnEach)
+}
+val value = 0
+
+
+fun testFlow(){
+
+    runBlocking{
+        flow<Int>{
+
+            emit(1)
+            emit(1)
+            emit(2)
+            emit(2)
+            emit(3)
+
+        }.collect {
+            println("stateFlowValue------$it")
+        }
+
+    }
+
+
+}
+
+fun testMutableStateFlow() {
+
+    val f = MutableStateFlow(0)
+    f.value = 0
+    f.value = 0
+    f.value = 1
+    f.value = 1
+    f.value = 1
+    f.value = 2020
+    runBlocking{
+        f.collect {
+            println("MutableStateFlow------$it")
+
+        }
+    }
+
+}
+
+fun testChannelFlowSendSameValue() {
+
+    runBlocking {
+        val channelFlow = channelFlow<Int>{
+            send(0)
+            send(1)
+            send(1)
+            send(2)
+        }.collect {
+            println("channelFlow------$it")
+        }
+    }
+
+
 }
