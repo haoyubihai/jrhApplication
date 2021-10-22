@@ -15,31 +15,50 @@ import kotlin.random.Random
  ***************************************
  */
 
-fun main() {
+//fun main() {
+//
+//    val listTest = ListTest()
+//
+//    listTest.userList.forEach {}
+//    listTest.userList.onEach {  }
+//    listTest.userList.map {  }
+//    listTest.userList.mapIndexed { index: Int, user: User ->  }
+//
+//    for (i in listTest.userList.indices){
+//
+//    }
+//
+//    for (i in 0 ..listTest.userList.lastIndex){
+//
+//    }
+//
+//    var isLogin = false
+//
+//    val userList =  if (isLogin) mutableListOf("abc","cbd","ccc") else emptyList()
+//    val nuserList = listOfNotNull("abc","cbd","ccc")
+//
+//
+//
+//
+//}
 
-    val listTest = ListTest()
 
-    listTest.userList.forEach {}
-    listTest.userList.onEach {  }
-    listTest.userList.map {  }
-    listTest.userList.mapIndexed { index: Int, user: User ->  }
-
-    for (i in listTest.userList.indices){
-
-    }
-
-    for (i in 0 ..listTest.userList.lastIndex){
-
-    }
-
-    var isLogin = false
-
-    val userList =  if (isLogin) mutableListOf("abc","cbd","ccc") else emptyList()
-    val nuserList = listOfNotNull("abc","cbd","ccc")
-
-
-
-
+fun main(args: Array<String>) {
+//    listOf(1, 2, 3).filter {
+//        print("$it ")
+//        it >= 2
+//    }
+//    print("- ")
+    listOf(1, 2, 3)
+        .asSequence()
+        .map {
+            print("****$it")
+            it + 1
+        }
+        .filter {
+            print("&&&$it ")
+            it >= 3
+        }
 }
 
 class ListTest {

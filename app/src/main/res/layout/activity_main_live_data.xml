@@ -23,10 +23,34 @@
         android:id="@+id/btnRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="request-data"
-
+        android:text="postValue-data-999-times"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="131dp" />
+    <Button
+        android:id="@+id/btnSetRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="setValue-data-999-times"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="131dp" />
+    <Button
+        android:id="@+id/postSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="post-set-value"
+        android:textAllCaps="false"
         tools:layout_editor_absoluteX="17dp"
         tools:layout_editor_absoluteY="131dp" />
 
+    <Button
+        android:id="@+id/postFlow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="use-flow-emit-value"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="131dp" />
 
 </LinearLayout>

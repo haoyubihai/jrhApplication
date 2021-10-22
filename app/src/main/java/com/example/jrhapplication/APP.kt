@@ -74,7 +74,7 @@ class APP :Application(){
              * Called when the Activity calls [super.onStart()][Activity.onStart].
              */
             override fun onActivityStarted(activity: Activity) {
-               checkAndAddFloatView(activity)
+//               checkAndAddFloatView(activity)
             }
 
             /**

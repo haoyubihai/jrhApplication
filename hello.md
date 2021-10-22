@@ -19,3 +19,33 @@
 > 代码层面 window是一个抽象类，PhoneWindow是具体实现
 > ViewRootImpl是window和view之间的桥梁，可以处理两边的对象，并将二者关联起来。
 
+3.https
+
+4. 挂起函数
+ suspend 关键字
+ 被suspend的标记的函数即为挂起函数。
+ 挂起函数是如何被挂起的？
+ suspend 函数在编译时，会传入一个Continuation 的实例，Continuation 是一个接口，里面有CoroutineContext 保存上下文
+ 还有一个resumeWith 方法，suspend 函数的恢复执行,就是通过调用resumeWith方法执行。同时会自动生成一些lablel 标签，系统
+ 处理为状态机的形式进行执行。挂起 通过return，遇到suspend函数挂起点 直接 return
+ 
+ ```
+/**
+ * Interface representing a continuation after a suspension point that returns a value of type `T`.
+ */
+@SinceKotlin("1.3")
+public interface Continuation<in T> {
+    /**
+     * The context of the coroutine that corresponds to this continuation.
+     */
+    public val context: CoroutineContext
+
+    /**
+     * Resumes the execution of the corresponding coroutine passing a successful or failed [result] as the
+     * return value of the last suspension point.
+     */
+    public fun resumeWith(result: Result<T>)
+}
+
+```
+ 

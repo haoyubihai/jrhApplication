@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         btnMotionLay.setOnClickListener { startKtxActivity<MotionMainActivity>() }
         btnRxLay.setOnClickListener { startKtxActivity<RxActivity>() }
         btnMessageBarrier.setOnClickListener { startKtxActivity<MessageBarrierActivity>() }
+        atmosphere.setOnClickListener { startKtxActivity<AtmosphereAct>() }
+
 
 
     }
