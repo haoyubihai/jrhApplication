@@ -22,5 +22,6 @@ class TestPrint {
 }
 
 fun main() {
-    TestPrint().print()
+//    TestPrint().print()
+    println("${30/100}--")
 }

@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+class Handler{
+ Looper looper
+ MessageQueue mQueue
+}
+
+class Looper{
+static final ThreadLocal<Looper> sThreadLocal
+}
+class MessageQueue
+class ThreadLocal{
+
+    + get()
+        Thread t = Thread.currentThread();
+        ThreadLocalMap map = getMap(t);
+        ThreadLocalMap.Entry e = map.getEntry(this)
+        T result = (T)e.value;
+
+    - set()
+     T value = initialValue();
+            Thread t = Thread.currentThread();
+            ThreadLocalMap map = getMap(t);
+            if (map != null)
+                map.set(this, value);
+            else
+                createMap(t, value);
+            return value;
+
+}
+class ThreadLocalMap{
+
+}
+class Thread{
+ThreadLocal.ThreadLocalMap threadLocals
+}
+
+Handler *-- Looper
+
+Handler *-- MessageQueue
+
+
+Looper *-- MessageQueue
+Looper *-- ThreadLocal
+
+
+ThreadLocal o-- ThreadLocalMap
+Thread o-- ThreadLocalMap
+
+note as N1
+ * Looper 实例被管理在静态属性 sThreadLocal 中
+ * ThreadLocal 内部通过 ThreadLocalMap 持有 Looper，key 为 ThreadLocal 实例本身，value 即为 Looper 实例
+ * 每个 Thread 都有一个自己的 ThreadLocalMap，这样可以保证每个线程对应一个独立的 Looper 实例，进而保证 myLooper() 可以获得线程独有的 Looper
+
+end note
+
+note bottom of N1
+ * 一个线程只有一个 Looper 实例
+ * 一个 Looper 实例只对应着一个 MessageQueue 实例
+ * 一个 MessageQueue 实例可对应多个 Message 实例，其从 Message 静态池里获取，存在 50 的上限
+ * 一个线程可以拥有多个 Handler 实例，其Handler 只是发送和执行任务逻辑的入口和出口
+ * ThreadLocal 实例是静态的，整个进程共用一个实例。每个 Looper 存放的 ThreadLocalMap 均弱引用它作为 key
+end note
+
+
+@enduml

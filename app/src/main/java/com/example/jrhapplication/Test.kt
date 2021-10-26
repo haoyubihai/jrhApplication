@@ -67,3 +67,6 @@ fun Person.say5(block:Person.Son.(name:String)->Unit){
     val son = create()
     block(son,"name")
 }
+
+
+
