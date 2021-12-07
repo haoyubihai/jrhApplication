@@ -49,16 +49,28 @@ fun main(args: Array<String>) {
 //        it >= 2
 //    }
 //    print("- ")
-    listOf(1, 2, 3)
-        .asSequence()
-        .map {
-            print("****$it")
-            it + 1
-        }
-        .filter {
-            print("&&&$it ")
-            it >= 3
-        }
+//    listOf(1, 2, 3)
+//        .asSequence()
+//        .map {
+//            print("****$it")
+//            it + 1
+//        }
+//        .filter {
+//            print("&&&$it ")
+//            it >= 3
+//        }
+
+    mutableMapOf<String, Any?>(
+        "a" to 15,
+        "b" to "aa"
+    ).apply {
+        put("c", "d")
+
+    }.let {
+        println("----$it")
+    }
+
+
 }
 
 class ListTest {
@@ -71,23 +83,21 @@ class ListTest {
     }
 
 
-
-    val userList2 = List(10){
-        User(it.toLong(),"name$it", it,"address${it%3}")
+    val userList2 = List(10) {
+        User(it.toLong(), "name$it", it, "address${it % 3}")
     }
 
-    val personList = List(100){
-        PersonUser("name$it",it)
+    val personList = List(100) {
+        PersonUser("name$it", it)
 
     }
-
 
 
     /**
      *  if (index >= 0 && index <= lastIndex) get(index) else defaultValue(index)
      *
      */
-    val userGetOrElse = userList.getOrElse(1){index->
+    val userGetOrElse = userList.getOrElse(1) { index ->
         println("do something $index no find")
     }
 
@@ -100,12 +110,12 @@ class ListTest {
     /**
      * 所有 age>0 返回true
      */
-    val userAll = userList.all { it.age>0 }
+    val userAll = userList.all { it.age > 0 }
 
     /**
      * 只要有一个 age>0 符合条件 返回true
      */
-    val userAny = userList.any { it.age>0 }
+    val userAny = userList.any { it.age > 0 }
 
     /**
      * 推荐  userList为empty 抛出异常
@@ -117,16 +127,16 @@ class ListTest {
     /**
      * 获取 第一个 年龄>100 是偶数的 下标
      */
-    val userIndexOfFirst = userList.indexOfFirst { it.age>100 && it.age%2==0 }
+    val userIndexOfFirst = userList.indexOfFirst { it.age > 100 && it.age % 2 == 0 }
 
-    val userIndexOfLast = userList.indexOfLast { it.age>100 && it.age%2==0 }
+    val userIndexOfLast = userList.indexOfLast { it.age > 100 && it.age % 2 == 0 }
 
     /**
      * 第一个年龄大于100的 user
      */
-    val userFist = userList.first { it.age>100 }
+    val userFist = userList.first { it.age > 100 }
 
-    val userLast = userList.last { it.age>100 }
+    val userLast = userList.last { it.age > 100 }
 
     /**
      * 升序
@@ -134,13 +144,12 @@ class ListTest {
     val userSort = userList.sortedBy { it.age }
 
 
-    val userNone = userList.none { it.age==19 }
+    val userNone = userList.none { it.age == 19 }
 
     /**
      * 随机一个 user ?
      */
     val userRandom = userList.randomOrNull()
-
 
 
     /**
@@ -163,12 +172,13 @@ class ListTest {
     /**
      * key值不唯一
      */
-    val userListToMapByAddress  = userList.associateBy { it.address }
+    val userListToMapByAddress = userList.associateBy { it.address }
 
     /**
      * user -> id =key  name = value
      */
-    val userIdKeyNameValueList = userList.associateBy (keySelector = {it.id},valueTransform = {it.name})
+    val userIdKeyNameValueList =
+        userList.associateBy(keySelector = { it.id }, valueTransform = { it.name })
 
     //----------------------------------------------groupBy-----------------------------------------------------------
 
@@ -180,8 +190,8 @@ class ListTest {
     /**
      * 以user-> address 分组 存储到指定的集合
      */
-    val userAddress = LinkedHashMap<String,MutableList<User>>()
-    val toUserAddress = userList.groupByTo(userAddress,  { it.address })
+    val userAddress = LinkedHashMap<String, MutableList<User>>()
+    val toUserAddress = userList.groupByTo(userAddress, { it.address })
 
     //-------------------------first,firstOrNull,last,lastOrNull,find,map,filter-----------------------------------------------------------
 
@@ -197,8 +207,7 @@ class ListTest {
     val lastUser = userList.last()
 
 
-
-    val userFind = userList.find { it.age>100 }
+    val userFind = userList.find { it.age > 100 }
 
     fun testFirstUser(): User = userList.toMutableList().run {
         clear()
@@ -217,6 +226,7 @@ class ListTest {
      * 获取name? 的list
      */
     val userNames = userList.map { it.name }
+
     /**
      * 获取name 的list
      */
@@ -231,11 +241,11 @@ class ListTest {
     /**
      * mapto 存储到指定的集合
      */
-    val personUserMapto = userList.mapTo(mutableListOf()){PersonUser(it.name)}
+    val personUserMapto = userList.mapTo(mutableListOf()) { PersonUser(it.name) }
 
-    val userFilter  = userList.filter { it.age>100 }
+    val userFilter = userList.filter { it.age > 100 }
 
-    val userFilterNot = userList.filterNot {it.age%2==0  }
+    val userFilterNot = userList.filterNot { it.age % 2 == 0 }
 
     /**
      *  userList 前10个
@@ -250,18 +260,17 @@ class ListTest {
     /**
      * userList --> 11-20的元素
      */
-    val userSubList = userList.subList(11,20)
+    val userSubList = userList.subList(11, 20)
 
     /**
      * 所有user age 为偶数的集合
      */
-    val userTakeWhile = userList.takeWhile { it.age%2==0 }
+    val userTakeWhile = userList.takeWhile { it.age % 2 == 0 }
 
     /**
      * 所有 user 的age>100 返回该 list  否则返回 null
      */
-    val userTakeIf = userList.takeIf { it.all { user-> user.age>100 } }
-
+    val userTakeIf = userList.takeIf { it.all { user -> user.age > 100 } }
 
 
     /**

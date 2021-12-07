@@ -17,7 +17,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.LiveDataActivity"></activity>
+        <activity
+            android:name=".ui.LottieActivity"
+            android:exported="false" />
+        <activity android:name=".ui.LiveDataActivity" />
         <activity android:name=".ui.MessageBarrierActivity" />
         <activity android:name=".ui.RxActivity" />
         <activity android:name=".ui.ImageLoderMainActivity" />
@@ -38,9 +41,9 @@
         <activity android:name=".ui.transform.TransformationLayoutActivity" />
         <activity android:name=".ui.SpringActivity" />
         <activity android:name=".ui.FrescoActivity" />
-        <activity android:name=".ui.AtmosphereAct"
-            android:theme="@style/FullScreenTheme"
-            />
+        <activity
+            android:name=".ui.AtmosphereAct"
+            android:theme="@style/FullScreenTheme" />
         <activity android:name=".ui.BreathActivity" />
         <activity android:name=".ui.ShadowActivity" />
         <activity android:name=".ui.RecyclerviewVpActivity" />

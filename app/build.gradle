@@ -137,6 +137,7 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 
     implementation 'com.facebook.rebound:rebound:0.3.8'
+    implementation 'com.airbnb.android:lottie:3.6.1'
 
     implementation 'com.alibaba:fastjson:1.1.71.android'
     implementation "com.github.skydoves:transformationlayout:1.0.3"

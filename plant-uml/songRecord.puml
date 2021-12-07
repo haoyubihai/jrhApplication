@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class RecordBaseViewModel
+note top : 共用业务数据更新处理，异常处理
+
+class SongRecordViewModelImpl
+
+
+
+RecordBaseViewModel <|-- SongRecordViewModelImpl
+
+
+
+
+class SongRecordActivity
+
+
+interface SongRecordViewModel
+note top:负责整个伴读伴唱业务逻辑
+interface AniViewModel
+note top :更新UI以及展示不同动画逻辑
+interface SongRecordPointViewModel
+note top: 埋点业务
+interface VideoCompileViewModel
+note top :合成视频处理
+interface BgVoiceViewModel
+note top : 试听音频、引导音、左右声道相关音频处理
+interface DownloadViewModel
+note top : 素材资源下载
+interface LrcViewModel
+note top: 歌词处理
+interface RecordViewModel
+note top: 录音评测
+
+
+
+
+
+SongRecordViewModel    <|-- SongRecordViewModelImpl
+AniViewModel   <|--SongRecordViewModelImpl
+SongRecordPointViewModel   <|--SongRecordViewModelImpl
+VideoCompileViewModel   <|--SongRecordViewModelImpl
+BgVoiceViewModel   <|--SongRecordViewModelImpl
+DownloadViewModel   <|--SongRecordViewModelImpl
+LrcViewModel   <|--SongRecordViewModelImpl
+RecordViewModel   <|--SongRecordViewModelImpl
+
+
+
+
+@enduml
