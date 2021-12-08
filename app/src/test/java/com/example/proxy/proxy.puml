@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IDelegate{
++ handlePage( page:String, params:String)
+}
+
+class ProxyDelegate{
+- realDelegate
++ handlePage( page:String, params:String)
+}
+
+
+class  RealDelegate{
++ handlePage( page:String, params:String)
+}
+
+
+
+IDelegate <|-- RealDelegate
+IDelegate <|-- ProxyDelegate
+RealDelegate -right->ProxyDelegate
+
+
+
+
+@enduml
