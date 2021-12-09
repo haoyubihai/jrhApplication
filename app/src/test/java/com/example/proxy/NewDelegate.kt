@@ -20,10 +20,10 @@ open class NewDelegate {
     }
 
     fun visit(){
-        println("visit----------------")
+        println("visit------not open ----------")
     }
 
     open fun order(){
-        println("order----------------")
+        println("order------is open ----------")
     }
 }
