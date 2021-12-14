@@ -32,6 +32,15 @@ class FrescoActivity : BaseActivity() {
         setContentView(R.layout.activity_fesco)
 
 
+        Glide.with(this)
+            .asBitmap()
+
+            .load("https://cdn.kaishuhezi.com/kstory/pangu/image/b215fb99-2cef-4d8e-b028-ff6a7ec2ce1a_info_w=2001_h=1125_s=276676.jpg")
+
+            .into(ivGlide)
+
+
+
         showGlideGif()
 
         sdv1.apply {
