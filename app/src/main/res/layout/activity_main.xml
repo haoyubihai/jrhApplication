@@ -13,7 +13,14 @@
        android:layout_height="match_parent"
        tools:context=".MainActivity">
 
-
+      <com.google.android.material.button.MaterialButton
+          android:layout_marginTop="10dp"
+          android:id="@+id/compose"
+          android:textColor="@color/colorAccent"
+          android:text="compose"
+          android:textAllCaps="false"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
       <com.google.android.material.button.MaterialButton
           android:layout_marginTop="10dp"
           android:id="@+id/lottie"

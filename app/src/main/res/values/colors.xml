@@ -14,4 +14,10 @@
     <color name="green">#25AA23</color>
     <color name="ltgreen">#25DD23</color>
     <color name="white">#ffffff</color>
+    <color name="light_blue_400">#FF29B6F6</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="gray_400">#FFBDBDBD</color>
+    <color name="gray_600">#FF757575</color>
+
+    <color name="gray_4A4A4A">#4A4A4A</color>
 </resources>

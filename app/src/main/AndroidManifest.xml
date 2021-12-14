@@ -18,6 +18,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".film.ui.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ComposeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.LottieActivity"
             android:exported="false" />
         <activity android:name=".ui.LiveDataActivity" />
