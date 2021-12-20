@@ -14,9 +14,9 @@ import com.example.jrhapplication.R;
 
 public class PlusMinusView extends LinearLayout {
 
-    private  TextView tvLabel;
-    private  Button btnMinus,btnPlus;
-    private  EditText etText;
+    private TextView tvLabel;
+    private Button btnMinus, btnPlus;
+    private EditText etText;
 
     private int currentIndex = 1;
 
@@ -43,7 +43,7 @@ public class PlusMinusView extends LinearLayout {
 
     private void init(Context context) {
 
-        inflate(context, R.layout.plus_minus_view,this);
+        inflate(context, R.layout.plus_minus_view, this);
 
         tvLabel = findViewById(R.id.tvLabel);
         btnMinus = findViewById(R.id.btnMinus);
@@ -56,7 +56,7 @@ public class PlusMinusView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 currentIndex = getCurrentIndex();
-                currentIndex++;
+                increase();
                 refreshEtText(currentIndex);
             }
         });
@@ -65,7 +65,7 @@ public class PlusMinusView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 currentIndex = getCurrentIndex();
-                currentIndex--;
+                deIncrease();
                 refreshEtText(currentIndex);
             }
         });
@@ -73,6 +73,25 @@ public class PlusMinusView extends LinearLayout {
 
     }
 
+    private void deIncrease() {
+        if (currentIndex<=0){
+            return;
+        }
+        currentIndex--;
+    }
+
+    private void increase() {
+        if (currentIndex>=maxValue){
+            return;
+        }
+        currentIndex++;
+    }
+
+    private int maxValue = 1;
+
+    public void initMaxValue(int max) {
+        this.maxValue = max;
+    }
 
 
     public int getCurrentIndex() {

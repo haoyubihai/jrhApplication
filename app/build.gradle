@@ -36,9 +36,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.0-beta04"
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = "1.1.0-beta04"
+//    }
 
     signingConfigs {
         release {

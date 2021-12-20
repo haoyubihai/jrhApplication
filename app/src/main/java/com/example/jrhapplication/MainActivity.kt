@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         atmosphere.setOnClickListener { startKtxActivity<AtmosphereAct>() }
         lottie.setOnClickListener { startKtxActivity<LottieActivity>() }
         compose.setOnClickListener { startKtxActivity<ComposeActivity>() }
+        widget.setOnClickListener { startKtxActivity<WidgetActivity>() }
 
 
 
