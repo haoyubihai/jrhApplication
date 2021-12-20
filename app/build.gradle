@@ -168,7 +168,9 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.9.0"
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
 
-    implementation "androidx.compose.ui:ui:1.1.0-beta04"
+    implementation 'com.orhanobut:dialogplus:1.11@aar'
+
+//    implementation "androidx.compose.ui:ui:1.1.0-beta04"
 }
 
 

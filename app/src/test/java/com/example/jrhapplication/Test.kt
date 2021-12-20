@@ -11,7 +11,7 @@ package com.example.jrhapplication
  */
 
 
-import kotlinx.coroutines.runBlocking
+//import kotlinx.coroutines.runBlocking
 
 //fun main() = runBlocking {
 //    val startTime = System.currentTimeMillis()
@@ -180,21 +180,31 @@ class User(val name: String)
 
 
 
-fun main() = runBlocking<Unit> {
-//    val nums = (1..5).asFlow()// numbers 1..3 every 300 ms
-//    val strs = (2.. 4).asFlow()// strings every 400 ms
-//    nums.zip(strs) { a, b -> "$a -> $b" } // compose a single string with "zip"
-//        .collect { value -> // collect and print
-//            println("$value  ms from start")
-//        }
+//fun main() = runBlocking<Unit> {
+////    val nums = (1..5).asFlow()// numbers 1..3 every 300 ms
+////    val strs = (2.. 4).asFlow()// strings every 400 ms
+////    nums.zip(strs) { a, b -> "$a -> $b" } // compose a single string with "zip"
+////        .collect { value -> // collect and print
+////            println("$value  ms from start")
+////        }
+////
+////    val a = null
+////    val ss =  a ?: 2
 //
-//    val a = null
-//    val ss =  a ?: 2
+////    val list = mutableListOf<String>("a","b","c")
+////    list[0] = "d"
+////    println(list)
+//
+//
+//
+//}
 
-    val list = mutableListOf<String>("a","b","c")
-    list[0] = "d"
-    println(list)
 
+fun main() {
+    val aList = mutableListOf(User("android"), User("kotlin"))
+    val bList = mutableListOf(User("kotlin"),User("android"))
+
+    println("a=b=${aList == bList}")
 }
 
 //fun main() = runBlocking<Unit> {
