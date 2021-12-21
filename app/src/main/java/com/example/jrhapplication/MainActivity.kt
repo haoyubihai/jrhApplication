@@ -2,6 +2,7 @@ package com.example.jrhapplication
 
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.example.jrhapplication.databinding.ActivityMainBinding
@@ -10,6 +11,8 @@ import com.example.jrhapplication.ktx.startKtxActivity
 import com.example.jrhapplication.ui.*
 import com.example.jrhapplication.ui.transform.TransformationLayoutActivity
 import com.jrhlive.library.viewBinding
+import com.yanzhenjie.permission.AndPermission
+import com.yanzhenjie.permission.runtime.Permission
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -50,6 +53,17 @@ class MainActivity : AppCompatActivity() {
         lottie.setOnClickListener { startKtxActivity<LottieActivity>() }
         compose.setOnClickListener { startKtxActivity<ComposeActivity>() }
         widget.setOnClickListener { startKtxActivity<WidgetActivity>() }
+        codeScan.setOnClickListener {
+
+            AndPermission.with(this).runtime().permission(Permission.Group.CAMERA).onGranted {
+                startKtxActivity<CodeScanActivity>()
+
+            }.onDenied {
+                Toast.makeText(this,"需要相机权限",Toast.LENGTH_SHORT).show()
+            }.start()
+
+
+        }
 
 
 
