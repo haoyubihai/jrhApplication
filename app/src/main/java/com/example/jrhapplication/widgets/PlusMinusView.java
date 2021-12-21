@@ -50,7 +50,8 @@ public class PlusMinusView extends LinearLayout {
         btnPlus = findViewById(R.id.btnPlus);
         etText = findViewById(R.id.etText);
 
-        etText.setText(currentIndex);
+        refreshText(currentIndex);
+
 
         btnPlus.setOnClickListener(new OnClickListener() {
             @Override
@@ -71,6 +72,10 @@ public class PlusMinusView extends LinearLayout {
         });
 
 
+    }
+
+    private void refreshText(int currentIndex) {
+        etText.setText(currentIndex+"");
     }
 
     private void deIncrease() {
@@ -101,7 +106,7 @@ public class PlusMinusView extends LinearLayout {
     }
 
     private void refreshEtText(int index) {
-        etText.setText(index);
+        refreshText(index);
     }
 
 

@@ -42,8 +42,6 @@ class TimerVMImpl : TimerViewModel() {
      * @param completeAction  totalTime正常倒计时结束返回
      * @param intervalAction 每隔 intervalTime ms 回调一次当前时间
      */
-    @ExperimentalCoroutinesApi
-    @ObsoleteCoroutinesApi
     override fun startTimer(
         key: String,
         totalTime: Long,
@@ -71,7 +69,6 @@ class TimerVMImpl : TimerViewModel() {
         }
     }
 
-    @ExperimentalCoroutinesApi
     override fun stopTimer(key: String) {
         timerMap[key]?.run {
             if (!isClosedForReceive) {

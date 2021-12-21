@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="凯叔语文幼小衔-体验课"
+        android:textColor="#28262a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvCompany"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textSize="16sp"
+        tools:text="凯叔语文幼小衔-体验课"
+        android:textColor="#28262a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvDurationTime"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textSize="16sp"
+        tools:text="凯叔语文幼小衔-体验课"
+        android:textColor="#28262a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+        android:id="@+id/tvInTime"
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:textSize="16sp"
+        tools:text="凯叔语文幼小衔-体验课"
+        android:textColor="#28262a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+   <LinearLayout
+      android:padding="24dp"
+       android:layout_marginTop="100dp"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+
+
+       <TextView
+           android:id="@+id/btnIdCard"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:text="身份证"
+           android:textSize="18sp"
+           android:layout_marginRight="12dp"
+           android:gravity="center"
+           android:layout_height="48dp"/>
+       <TextView
+           android:layout_marginLeft="12dp"
+           android:id="@+id/btnCode"
+           android:layout_weight="1"
+           android:text="二维码"
+           android:gravity="center"
+           android:textSize="18sp"
+           android:layout_width="0dp"
+           android:layout_height="match_parent"/>
+
+   </LinearLayout>
+
+
+
+
+</LinearLayout>

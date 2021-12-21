@@ -18,6 +18,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".film.ui.AffirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".film.ui.FilmDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.WidgetActivity"
             android:exported="false" />
         <activity

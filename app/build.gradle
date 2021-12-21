@@ -40,6 +40,12 @@ android {
 //        kotlinCompilerExtensionVersion = "1.1.0-beta04"
 //    }
 
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
     signingConfigs {
         release {
 
@@ -94,7 +100,7 @@ android {
 
     buildFeatures{
         viewBinding = true
-        compose true
+
     }
 }
 
@@ -152,6 +158,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    testImplementation 'junit:junit:4.12'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 
@@ -169,6 +176,8 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
 
     implementation 'com.orhanobut:dialogplus:1.11@aar'
+
+    testImplementation 'org.robolectric:robolectric:4.6'
 
 //    implementation "androidx.compose.ui:ui:1.1.0-beta04"
 }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".film.ui.AffirmActivity">
+
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="19dp"
+        android:paddingTop="14dp"
+        android:paddingRight="19dp"
+        android:paddingBottom="14dp"
+        android:textColor="#28262a"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="凯叔语文幼小衔-体验课" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="19dp"
+        android:paddingTop="14dp"
+        android:paddingRight="19dp"
+        android:paddingBottom="14dp"
+        android:textColor="#28262a"
+        android:textSize="16sp"
+        tools:text="凯叔语文幼小衔-体验课" />
+
+    <View
+        android:background="#888888"
+        android:layout_width="match_parent"
+        android:layout_height="1px"/>
+
+
+    <TextView
+        android:id="@+id/tvTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="19dp"
+        android:paddingTop="24dp"
+        android:paddingRight="19dp"
+        android:paddingBottom="14dp"
+        android:textColor="#28262a"
+        android:textSize="16sp"
+        tools:text="凯叔语文幼小衔-体验课" />
+
+
+
+    <com.example.jrhapplication.widgets.PlusMinusView
+        android:id="@+id/tvPlusMinus"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcList"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"/>
+
+
+    <LinearLayout
+        android:padding="24dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <TextView
+            android:id="@+id/btnSure"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="确定"
+            android:textSize="18sp"
+            android:layout_marginRight="12dp"
+            android:gravity="center"
+            android:layout_height="48dp"/>
+        <TextView
+            android:layout_marginLeft="12dp"
+            android:id="@+id/btnCancel"
+            android:layout_weight="1"
+            android:text="取消"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
