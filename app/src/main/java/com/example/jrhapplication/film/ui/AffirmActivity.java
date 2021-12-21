@@ -24,7 +24,7 @@ public class AffirmActivity extends Activity {
      * 0 身份证 1 二维码票据 2 人员二维码
      */
     private int type = 0;
-    private List<String> tickets = new ArrayList<String>();
+    private List<Ticket> tickets = new ArrayList<Ticket>();
     private TicketAdapter mAdapter;
 
 
@@ -43,9 +43,15 @@ public class AffirmActivity extends Activity {
 
     private void initRcList() {
         mAdapter = new TicketAdapter();
-        mAdapter.setTickets(tickets);
+
         rcList.setAdapter(mAdapter);
         rcList.setLayoutManager(new LinearLayoutManager(this));
+        for (int i = 0; i <200 ; i++) {
+            Ticket t = new Ticket();
+            t.setName("i="+i);
+            tickets.add(t);
+        }
+        mAdapter.setTickets(tickets);
         mAdapter.notifyDataSetChanged();
     }
 
@@ -75,6 +81,7 @@ public class AffirmActivity extends Activity {
 
 
 
+
     private void showPlusMinusView() {
         tvTip.setText("请输入核销数目");
         plusMinusView.setVisibility(View.VISIBLE);
@@ -92,5 +99,7 @@ public class AffirmActivity extends Activity {
     }
 
     private void sure() {
+
+        mAdapter.getCheckBoxPositions();
     }
 }
