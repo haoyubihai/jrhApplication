@@ -19,7 +19,10 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ui.compose.ui.MainComposeActivity"
+            android:name=".film.AlertDialogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.compose.MainComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_main_compose"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -44,35 +47,81 @@
         <activity
             android:name=".ui.LottieActivity"
             android:exported="false" />
-        <activity android:name=".ui.LiveDataActivity" />
-        <activity android:name=".ui.MessageBarrierActivity" />
-        <activity android:name=".ui.RxActivity" />
-        <activity android:name=".ui.ImageLoderMainActivity" />
-        <activity android:name=".ui.MotionMainActivity" />
+        <activity
+            android:name=".ui.LiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MessageBarrierActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ImageLoderMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MotionMainActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.ScrollingActivity"
+            android:exported="false"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.SkillsMainActivity" />
-        <activity android:name=".flowtest.FlowActivity" />
-        <activity android:name=".ui.KtxActivity" />
-        <activity android:name=".ui.MainLiveDataActivity" />
-        <activity android:name=".ui.CoroutineActivity" />
-        <activity android:name=".ui.TimerActivity" />
-        <activity android:name=".ui.MotionActivity" />
-        <activity android:name=".ui.FastjsonActivity" />
-        <activity android:name=".ui.transform.PosterDetailActivity" />
-        <activity android:name=".ui.transform.TransformationLayoutActivity" />
-        <activity android:name=".ui.SpringActivity" />
-        <activity android:name=".ui.FrescoActivity" />
+        <activity
+            android:name=".ui.SkillsMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".flowtest.FlowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.KtxActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainLiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.CoroutineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.TimerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MotionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.FastjsonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transform.PosterDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.transform.TransformationLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SpringActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.FrescoActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.AtmosphereAct"
+            android:exported="false"
             android:theme="@style/FullScreenTheme" />
-        <activity android:name=".ui.BreathActivity" />
-        <activity android:name=".ui.ShadowActivity" />
-        <activity android:name=".ui.RecyclerviewVpActivity" />
-        <activity android:name=".ui.ChipsActivity" />
-        <activity android:name=".ui.MaterialShapeDrawableActivity" />
+        <activity
+            android:name=".ui.BreathActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ShadowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.RecyclerviewVpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ChipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MaterialShapeDrawableActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

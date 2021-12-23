@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import com.example.jrhapplication.databinding.ActivityMainBinding
+import com.example.jrhapplication.film.AlertDialogActivity
 import com.example.jrhapplication.flowtest.FlowActivity
 import com.example.jrhapplication.ktx.startKtxActivity
 import com.example.jrhapplication.ui.*
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
 
 
         addButtonView<MainComposeActivity>("ComposeTry")
+        addButtonView<AlertDialogActivity>("AlertDialogTest")
 
     }
 
