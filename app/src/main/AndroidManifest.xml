@@ -19,6 +19,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.compose.ui.MainComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_compose"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ui.CodeScanActivity"
             android:exported="false" />
         <activity
@@ -68,7 +73,9 @@
         <activity android:name=".ui.RecyclerviewVpActivity" />
         <activity android:name=".ui.ChipsActivity" />
         <activity android:name=".ui.MaterialShapeDrawableActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

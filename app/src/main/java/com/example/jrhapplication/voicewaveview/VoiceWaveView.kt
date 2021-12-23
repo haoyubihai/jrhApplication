@@ -181,7 +181,8 @@ class VoiceWaveView @JvmOverloads constructor(
                     valHandler.postDelayed(this, duration);
                 }
             }
-            valHandler.post(runnable)
+            runnable?.let {  valHandler.post(it) }
+
         } else {
 
         }
@@ -304,7 +305,8 @@ class VoiceWaveView @JvmOverloads constructor(
     fun stop() {
         isStart = false
         if (runnable != null) {
-            valHandler.removeCallbacks(runnable)
+            runnable?.let {  valHandler.removeCallbacks(it)}
+
         }
         valueAnimator.cancel()
     }

@@ -1,5 +1,6 @@
 package com.example.jrhapplication
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
@@ -9,11 +10,14 @@ import com.example.jrhapplication.databinding.ActivityMainBinding
 import com.example.jrhapplication.flowtest.FlowActivity
 import com.example.jrhapplication.ktx.startKtxActivity
 import com.example.jrhapplication.ui.*
+import com.example.jrhapplication.ui.compose.MainComposeActivity
 import com.example.jrhapplication.ui.transform.TransformationLayoutActivity
+import com.google.android.material.button.MaterialButton
 import com.jrhlive.library.viewBinding
 import com.yanzhenjie.permission.AndPermission
 import com.yanzhenjie.permission.runtime.Permission
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.reflect.KClass
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,11 +29,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         btnMaterialShapeDrawable.setOnClickListener { startKtxActivity<MaterialShapeDrawableActivity>() }
         btnChips.setOnClickListener { startKtxActivity<ChipsActivity>() }
         btnVp2.setOnClickListener { startKtxActivity<RecyclerviewVpActivity>() }
@@ -61,12 +64,20 @@ class MainActivity : AppCompatActivity() {
             }.onDenied {
                 Toast.makeText(this,"需要相机权限",Toast.LENGTH_SHORT).show()
             }.start()
-
-
         }
 
 
+        addButtonView<MainComposeActivity>("ComposeTry")
 
+    }
+
+    private inline fun <reified T:Activity> addButtonView(content:String){
+        val button = MaterialButton(this).apply {
+            text = content
+            isAllCaps = false
+        }
+        container.addView(button,0)
+        button.setOnClickListener { startKtxActivity<T>()}
     }
 
     override fun onResume() {

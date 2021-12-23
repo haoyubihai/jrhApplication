@@ -2,10 +2,10 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
-      <module name="jrhApplication.app" target="1.8" />
-      <module name="jrhApplication.jrhlibrary" target="1.8" />
-      <module name="jrhApplication.live-lib-rx" target="1.8" />
-      <module name="jrhApplication.live-lib-views" target="1.8" />
+      <module name="jrhApplication.app" target="11" />
+      <module name="jrhApplication.jrhlibrary" target="11" />
+      <module name="jrhApplication.live-lib-rx" target="11" />
+      <module name="jrhApplication.live-lib-views" target="11" />
       <module name="lib" target="1.7" />
     </bytecodeTargetLevel>
   </component>
